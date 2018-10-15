@@ -1,31 +1,42 @@
 <?
-$dbElement = ElementTable::getList([
-    'select' => ['ID', 'NAME', 'CREATED_BY', 'DATE_CREATE', 'CLIENT', 'STATUS', 'BP_ID', 'TASK_ID', 'CURRENT_APPROVER'],
-    'filter' => [
-        '=IBLOCK_ID' => $this->arParams['IBLOCK_ID'],
-        "=CLIENT" => $this->arParams['CLIENT_ID'],
-        "!=BP_ID" => "",
-        '=CLIENT_PROP.CODE' => 'CLIENT',
-        '=STATUS_PROP.CODE' => 'STATUS',
-        '=BP_ID_PROP.CODE' => 'BP_ID',
-        '=TASK_ID_PROP.CODE' => 'TASK_ID',
-        '=CURRENT_APPROVER_PROP.CODE' => 'CURRENT_APPROVER',
-        [
-            "LOGIC" => "AND",
-            ["!STATUS" => 'null'],
-            ["<STATUS" => strval($stat[count($stat) - 1])]
+/**
+ * Получить элементы инфоблока со свойствами D7
+ */
+use \Bitrix\Iblock\ElementTable;
+use \Bitrix\Main\ArgumentException;
+
+try {
+
+    $dbElement = ElementTable::getList([
+        'select' => ['ID', 'NAME', 'CREATED_BY', 'DATE_CREATE', 'CLIENT', 'STATUS', 'BP_ID', 'TASK_ID', 'CURRENT_APPROVER'],
+        'filter' => [
+            '=IBLOCK_ID' => $this->arParams['IBLOCK_ID'],
+            "=CLIENT" => $this->arParams['CLIENT_ID'],
+            "!=BP_ID" => "",
+            '=CLIENT_PROP.CODE' => 'CLIENT',
+            '=STATUS_PROP.CODE' => 'STATUS',
+            '=BP_ID_PROP.CODE' => 'BP_ID',
+            '=TASK_ID_PROP.CODE' => 'TASK_ID',
+            '=CURRENT_APPROVER_PROP.CODE' => 'CURRENT_APPROVER',
+            [
+                "LOGIC" => "AND",
+                ["!STATUS" => 'null'],
+                ["<STATUS" => 2]
+            ],
         ],
-    ],
-    'order' => ['DATE_CREATE' => 'DESC'],
-    'runtime' => getProps(['CLIENT', 'STATUS', 'BP_ID', 'TASK_ID', 'CURRENT_APPROVER'])
-]);
+        'order' => ['DATE_CREATE' => 'DESC'],
+        'runtime' => getProps(['CLIENT', 'STATUS', 'BP_ID', 'TASK_ID', 'CURRENT_APPROVER'])
+    ]);
+} catch (ArgumentException $e) {
+}
+
 
 /**
  * Массив свойств элемента инфоблока для выборки
  * @param $arProps
  * @return array
  */
-public static function getProps($arProps)
+function getProps($arProps)
 {
     $result = [];
     foreach ($arProps as $code) {
