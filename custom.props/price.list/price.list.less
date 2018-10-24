@@ -1,0 +1,166 @@
+.price-list-prop {
+
+  table.outer {
+    padding-bottom: 12px;
+
+    >tbody > tr:first-child table tr {
+        background-color: #e7eff1;
+    }
+
+    table.inner {
+
+      &.first {
+        td {
+          border-top: 1px solid #a8b6b9;
+
+          &:first-child {
+            span {
+              display: block;
+              width: 180px;
+            }
+          }
+
+          &:nth-child(2) {
+            span {
+              display: block;
+              width: 106px;
+            }
+          }
+
+          input {
+            &[type="number"] {
+              width: 30px;
+              font-size: 11px;
+            }
+          }
+        }
+      }
+
+      tr {
+
+        td {
+          padding: 4px;
+          border: 1px solid #a8b6b9;
+          border-right: none;
+          border-top: none;
+          //width: 114px;
+          text-align: center;
+
+          >div {
+            width: 92px;
+          }
+
+          &:first-child {
+            //width: 186px;
+          }
+
+          &:nth-last-child(2) {
+            border-right: 1px solid #a8b6b9;
+          }
+
+          &:last-child {
+            border-right: 1px solid #a8b6b9;
+          }
+
+          &.add-col {
+            text-align: center;
+            width: 30px;
+            border-left: none;
+
+            input {
+              background: url('/bitrix/panel/main/images/bx-admin-sprite-small-2.png') no-repeat 0 0!important;
+              padding-left: 10px!important;
+              height: 22px;
+              margin-bottom: 8px;
+
+              &.adm-btn-add {
+                background-position: 6px -2423px!important;
+              }
+
+              &.adm-btn-del {
+                background-position: 6px -1815px!important;
+              }
+
+              &:last-child {
+                margin-bottom: 1px;
+              }
+            }
+          }
+
+          &.add-row {
+            text-align: right;
+            width: 30px;
+            border: none;
+
+            input {
+              background: url('/bitrix/panel/main/images/bx-admin-sprite-small-2.png') no-repeat 0 0!important;
+              padding-left: 10px!important;
+              height: 22px;
+              margin-bottom: 0;
+              border: none;
+              box-shadow: none;
+              padding-right: 20px;
+
+              &.adm-btn-remove {
+                background-position: 0 -3014px!important;
+
+                &:hover {
+                  background-position: 0 -2987px !important;
+                }
+              }
+            }
+
+            div {
+              width: 30px;
+            }
+          }
+
+          label {
+            width: 70px;
+            display: inline-block;
+          }
+
+          input {
+            font-size: 12px;
+
+            &[type="number"] {
+              text-align: right;
+              font-size: 12px;
+              background: #fff;
+              border-radius: 4px;
+              border: 1px solid #a3a5a5;
+              color: #000;
+              -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 2px 2px -1px rgba(180, 188, 191, 0.7);
+              box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 2px 2px -1px rgba(180, 188, 191, 0.7);
+              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+              width: 82px;
+              height: 27px;
+              margin: 0;
+              vertical-align: middle;
+              padding: 0 4px;
+              -webkit-font-smoothing: antialiased;
+
+              &::-webkit-outer-spin-button,
+              &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+            }
+          }
+
+          select {
+
+            &.service {
+              width: 180px;
+            }
+
+            &.level {
+              width: 106px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
