@@ -1,0 +1,25 @@
+.customgallery {
+  width: inherit !important;
+  margin-bottom: 15px!important;
+}
+.customgallery td:first-child {
+  width: 100px;
+  vertical-align: top;
+}
+.customgallery td input {
+  margin-bottom: 6px!important;
+  width: 99% !important;
+}
+.customgallery td textarea {
+  width: auto !important;
+  height: auto !important;
+  margin-bottom: 5px!important;
+}
+.customgallery td textarea:first-child {
+  margin-bottom: 10px!important;
+}
+.customgallery td .adm-fileinput-wrapper {
+  width: 275px !important;
+  margin-left: 20px;
+}
+/*# sourceMappingURL=styles.css.map */

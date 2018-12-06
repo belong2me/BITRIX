@@ -1,0 +1,19 @@
+{
+  "name": "rayonnant/site",
+  "type": "project",
+  "require": {
+    "php": ">=7.1.0",
+    "meenie/javascript-packer": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rayonnant\\": "classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "Kotlyarevskiy",
+      "email": "kotlyarevskiy@gmail.com"
+    }
+  ]
+}

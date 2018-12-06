@@ -1,0 +1,30 @@
+.custom-prop-services table tr td {
+  display: block;
+  padding: 0 0 4px;
+}
+.custom-prop-services table tr td div {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.custom-prop-services table tr td div label {
+  display: block;
+  padding-bottom: 4px;
+}
+.custom-prop-services table tr td div input[type='number'] {
+  background: #fff;
+  border: 1px solid;
+  border-color: #87919c #959ea9 #9ea7b1 #959ea9;
+  border-radius: 4px;
+  color: #000;
+  -webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 2px 2px -1px rgba(180, 188, 191, 0.7);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.3), inset 0 2px 2px -1px rgba(180, 188, 191, 0.7);
+  display: inline-block;
+  outline: none;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+  height: 25px;
+  padding: 0 5px;
+  margin: 0;
+}
+/*# sourceMappingURL=services.css.map */

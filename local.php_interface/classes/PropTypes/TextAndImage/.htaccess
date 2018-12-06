@@ -1,0 +1,8 @@
+
+Options -Indexes
+Order allow,deny
+<Files "fileinput.php">
+	Satisfy Any
+    Allow from all
+</Files>
+Deny from all

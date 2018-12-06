@@ -1,0 +1,1 @@
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/benequire.customsettings/admin/gcustomsettings.php");?>

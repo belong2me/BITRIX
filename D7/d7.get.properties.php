@@ -39,6 +39,10 @@ try {
 function getProps($arProps)
 {
     $result = [];
+
+    global $DB;
+    $DB->Query('SET SESSION group_concat_max_len = 1000000', true);
+
     foreach ($arProps as $code) {
         $result[$code . '_PROP'] = [
             'data_type' => 'Bitrix\Iblock\PropertyTable',
@@ -48,14 +52,15 @@ function getProps($arProps)
         $result[$code] = [
             'data_type' => 'float',
             'expression' => [
-                '(SELECT b_iblock_element_property.VALUE 
-                  FROM b_iblock_element_property 
-                  WHERE b_iblock_element_property.IBLOCK_PROPERTY_ID=%s AND b_iblock_element_property.IBLOCK_ELEMENT_ID=%s
-                )',
+                '(SELECT GROUP_CONCAT(b_iblock_element_property.VALUE SEPARATOR "|||") 
+                      FROM b_iblock_element_property 
+                      WHERE b_iblock_element_property.IBLOCK_PROPERTY_ID=%s AND b_iblock_element_property.IBLOCK_ELEMENT_ID=%s
+                    )',
                 $code . '_PROP.ID',
                 'ID',
             ],
         ];
     }
+
     return $result;
 }
